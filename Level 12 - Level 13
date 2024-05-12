@@ -1,0 +1,87 @@
+ssh bandit12@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+bandit12@bandit.labs.overthewire.org's password: JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+bandit12@bandit:~$ ls
+data.txt
+bandit12@bandit:~$ mkdir /tmp/ra6narok
+bandit12@bandit:~$ cp data.txt /tmp/ra6narok
+bandit12@bandit:~$ cd /tmp/ra6narok
+bandit12@bandit:/tmp/ra6narok$ ls
+data.txt
+bandit12@bandit:/tmp/ra6narok$ xxd -r data.txt ra6narok
+bandit12@bandit:/tmp/ra6narok$ ls
+data.txt  ra6narok
+bandit12@bandit:/tmp/ra6narok$ rm data.txt
+bandit12@bandit:/tmp/ra6narok$ file ra6narok
+ra6narok: gzip compressed data, was "data2.bin", last modified: Thu Oct  5 06:19:20 2023, max compression, from Unix, original size modulo 2^32 573
+bandit12@bandit:/tmp/ra6narok$ mv ra6narok ra6narok.gz
+bandit12@bandit:/tmp/ra6narok$ ls
+ra6narok.gz
+bandit12@bandit:/tmp/ra6narok$ gzip -d ra6narok.gz
+bandit12@bandit:/tmp/ra6narok$ ls
+ra6narok
+bandit12@bandit:/tmp/ra6narok$ file ra6narok
+ra6narok: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/ra6narok$ mv ra6narok ra6narok.bz2
+bandit12@bandit:/tmp/ra6narok$ ls
+ra6narok.bz2
+bandit12@bandit:/tmp/ra6narok$ bzip2 -d ra6narok.bz2
+bandit12@bandit:/tmp/ra6narok$ ls
+ra6narok
+bandit12@bandit:/tmp/ra6narok$ cat ra6narok
+hUedata4.bin���Ka��qDte���A�g���E��	["��AS\ZWO��*�J�FI
+�                                                         �
+ B�.!�Y���<����jʛ����_�ϗ�y.���R�Y���%���7�?�8���{������n�ι��Q+��8=�)+���d"�:�ݿ�/��ӿ�\�״���W���������X՝�+��s!�~nm4��w��m����Q ���.1)��gE7<��iY�?��U�P�v��J�Q�LWVs!u($
+    ��fǾ�,١��'p��j�
+                   -W�D��7r�����l��7"��u��T���JcC��D��ȵ��z�������77���Wݾ��/�S��╊ftamo��G�ӮO��m�ww>��^����d] �9^�p~G0�P
+bandit12@bandit:/tmp/ra6narok$ file ra6narok
+ra6narok: gzip compressed data, was "data4.bin", last modified: Thu Oct  5 06:19:20 2023, max compression, from Unix, original size modulo 2^32 20480
+bandit12@bandit:/tmp/ra6narok$ mv ra6narok ra6narok.gz
+bandit12@bandit:/tmp/ra6narok$ gzip -d ra6narok.gz
+bandit12@bandit:/tmp/ra6narok$ ls
+ra6narok
+bandit12@bandit:/tmp/ra6narok$ file ra6narok
+ra6narok: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/ra6narok$ tar -xvf ra6narok
+data5.bin
+bandit12@bandit:/tmp/ra6narok$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/ra6narok$ tar -xvf data5.bin
+data6.bin
+bandit12@bandit:/tmp/ra6narok$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/ra6narok$ ls
+data5.bin  data6.bin  ra6narok
+bandit12@bandit:/tmp/ra6narok$ rm ra6narok
+bandit12@bandit:/tmp/ra6narok$ rm data5.bin
+bandit12@bandit:/tmp/ra6narok$ ls
+data6.bin
+bandit12@bandit:/tmp/ra6narok$ mv data6.bin ra6narok.bz2
+bandit12@bandit:/tmp/ra6narok$ ls
+ra6narok.bz2
+bandit12@bandit:/tmp/ra6narok$ bzip2 -d ra6narok.bz2
+bandit12@bandit:/tmp/ra6narok$ ls
+ra6narok
+bandit12@bandit:/tmp/ra6narok$ file ra6narok
+ra6narok: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/ra6narok$ tar -xvf ra6narok
+data8.bin
+bandit12@bandit:/tmp/ra6narok$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu Oct  5 06:19:20 2023, max compression, from Unix, original size modulo 2^32 49
+bandit12@bandit:/tmp/ra6narok$ ls
+data8.bin  ra6narok
+bandit12@bandit:/tmp/ra6narok$ rm ra6narok
+bandit12@bandit:/tmp/ra6narok$ ls
+data8.bin
+bandit12@bandit:/tmp/ra6narok$ mv data8.bin ra6narok.gz
+bandit12@bandit:/tmp/ra6narok$ gzip -d ra6narok.gz
+bandit12@bandit:/tmp/ra6narok$ file ra6narok
+ra6narok: ASCII text
+bandit12@bandit:/tmp/ra6narok$ cat ra6narok
+The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
