@@ -1,0 +1,22 @@
+ssh bandit14@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+bandit14@bandit.labs.overthewire.org's password: fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq 
+
+bandit14@bandit:~$ nmap localhost -p 30000
+Starting Nmap 7.80 ( https://nmap.org ) at 2024-05-16 08:08 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00017s latency).
+
+PORT      STATE SERVICE
+30000/tcp open  ndmps
+
+Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds
+bandit14@bandit:~$ nc localhost 30000
+fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+Correct!
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt <-----PASSWORD
