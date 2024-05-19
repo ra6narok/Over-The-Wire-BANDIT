@@ -1,0 +1,33 @@
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+bandit20@bandit.labs.overthewire.org's password: VxCazJaVykI6W36BkBU0mJTCM8rR95XT 
+
+bandit20@bandit:~$ ls
+suconnect
+bandit20@bandit:~$ ./suconnect
+Usage: ./suconnect <portnumber>
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+bandit20@bandit:~$ nc -lv -p 56789 
+Listening on 0.0.0.0 56789
+Connection received on localhost 56324
+VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+NvEJF7oVjkddltPSrdKEFOllh9V1IBcq  <-----PASSWORD
+
+TERMINAL 2
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+bandit20@bandit.labs.overthewire.org's password: VxCazJaVykI6W36BkBU0mJTCM8rR95XT 
+
+bandit20@bandit:~$ ./suconnect 56789
+Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+Password matches, sending next password
