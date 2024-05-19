@@ -1,0 +1,41 @@
+ssh bandit22@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+bandit22@bandit.labs.overthewire.org's password: WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff 
+
+bandit22@bandit:~$ ls -l /etc/cron.d/
+total 36
+-rw-r--r-- 1 root root  62 Oct  5  2023 cronjob_bandit15_root
+-rw-r--r-- 1 root root  62 Oct  5  2023 cronjob_bandit17_root
+-rw-r--r-- 1 root root 120 Oct  5  2023 cronjob_bandit22
+-rw-r--r-- 1 root root 122 Oct  5  2023 cronjob_bandit23
+-rw-r--r-- 1 root root 120 Oct  5  2023 cronjob_bandit24
+-rw-r--r-- 1 root root  62 Oct  5  2023 cronjob_bandit25_root
+-rw-r--r-- 1 root root 201 Jan  8  2022 e2scrub_all
+-rwx------ 1 root root  52 Oct  5  2023 otw-tmp-dir
+-rw-r--r-- 1 root root 396 Feb  2  2021 sysstat
+bandit22@bandit:~$ cat /ect/cron.d/cronjob_bandit23
+cat: /ect/cron.d/cronjob_bandit23: No such file or directory
+bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+bandit22@bandit:~$ myname=$(whoami)
+bandit22@bandit:~$ echo I am user $myname | md5sum | cut -d ' ' -f 1
+8169b67bd894ddbb4412f91573b38db3
+bandit22@bandit:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G  <-----PASSWORD
