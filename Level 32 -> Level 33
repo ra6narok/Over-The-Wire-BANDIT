@@ -1,0 +1,21 @@
+ssh bandit32@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+bandit32@bandit.labs.overthewire.org's password: rmCBvG56y58BXzv98yZGdO7ATVL5dW8y 
+
+WELCOME TO THE UPPERCASE SHELL
+>> ls
+sh: 1: LS: Permission denied
+>> $SHELL
+WELCOME TO THE UPPERCASE SHELL
+>> $0     
+$ whoami
+bandit33
+$ id
+uid=11033(bandit33) gid=11032(bandit32) groups=11032(bandit32)
+$ cat /etc/bandit_pass/bandit33
+odHo63fHiFqcWWJG9rLiLDtPm45KzUKy
